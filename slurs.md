@@ -74,7 +74,7 @@
 
 ---
 
-# When does machine learning make sense?
+# When does ML make sense?
 
 - When there is no easily-grokable model underlying a process.
 - When the process yields sensible results with few outliers.
