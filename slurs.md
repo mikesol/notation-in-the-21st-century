@@ -2,11 +2,26 @@
 
 ---
 
+# A bit about me
+
+- CEO of a Helsinki-based company called Meeshkan that mostly-legally reverse engineers software.
+- We're hiring!
+- Worked a lot on LilyPond and Guido about 10 years ago.
+- Big thanks to Werner for organizing this.
+
+---
+
 # What is machine learning
 
-- Randomly generate differentiable equations with tens of thousands of variables.
-- Find a local minimum of the equations based on fully-known input data.
+- Randomly generate equations with tens of thousands of variables.
+- Find a local minimum of a loss function using input data _and_ targets.
 - Use the local minimum to make predictions about partially-known data.
+
+---
+
+# Example 1 - Linar regression.
+
+![Linear regression](./linear_regression.png)
 
 ---
 
