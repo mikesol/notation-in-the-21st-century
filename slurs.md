@@ -4,9 +4,10 @@
 
 # A bit about me
 
-- CEO of a Helsinki-based company called Meeshkan that mostly-legally reverse engineers software.
+- CEO of a Helsinki-based company called [Meeshkan](https://meeshkan.com) that mostly-legally reverse engineers software.
 - We're hiring!
 - Worked a lot on LilyPond and Guido about 10 years ago.
+- Artistic director of [ensemble 101](https://ensemble101.fr).
 - Big thanks to Werner for organizing this.
 
 ---
@@ -22,6 +23,10 @@
 # Example 1 - Linar regression.
 
 ![Linear regression](./linear_regression.png)
+
+- This is machine learning with two variables, or weights: a slope and an offeset.
+- Here, we can find an analytic solution, meaning that we can solve the best possible fit without trial and error.
+- In more complex problems (anything over a few dimensions), analytic solutions are not possible and you need to iterative methods to find the best solution.
 
 ---
 
