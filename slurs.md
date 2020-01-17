@@ -76,8 +76,121 @@
 
 ---
 
-# Slurs in LilyPond
+# Slurs in LilyPond 1
 
+    !scheme
+    ; scm/layout-slur.scm
+    (define default-slur-details
+    '((region-size . 4)
+        (head-encompass-penalty . 1000.0)
+        (stem-encompass-penalty . 30.0)
+        (edge-attraction-factor . 4)
+        (same-slope-penalty . 20)
+        (steeper-slope-factor . 50)
+        (non-horizontal-penalty . 15)
+        (max-slope . 1.1)
+        (max-slope-factor . 10)
+        (free-head-distance . 0.3)
+        (free-slur-distance . 0.8)
+        (gap-to-staffline-inside . 0.2)
+        (gap-to-staffline-outside . 0.1)
+        (extra-object-collision-penalty . 50)
+        (accidental-collision . 3)
+        (extra-encompass-free-distance . 0.3)
+        (extra-encompass-collision-distance . 0.8)
+        (head-slur-distance-max-ratio . 3)
+        (head-slur-distance-factor . 10)
+        (absolute-closeness-measure . 0.3)
+        (edge-slope-exponent . 1.7)
+        (close-to-edge-length . 2.5)
+        (encompass-object-range-overshoot . 0.5)
+        (slur-tie-extrema-min-distance . 0.2)
+        (slur-tie-extrema-min-distance-penalty . 2)
+        ))
+
+---
+
+# Slurs in LilyPond 2
+
+    !scheme
+    ; scm/define-grobs.scm
+    (Slur
+     . (
+        (avoid-slur . inside)
+        (control-points . ,ly:slur::calc-control-points)
+        (cross-staff . ,ly:slur::calc-cross-staff)
+        (details . ,default-slur-details)
+        (direction . ,ly:slur::calc-direction)
+        (height-limit . 2.0)
+        (line-thickness . 0.8)
+        (minimum-length . 1.5)
+        (ratio . 0.25)
+        (springs-and-rods . ,ly:spanner::set-spacing-rods)
+        (stencil . ,ly:slur::print)
+        (thickness . 1.2)
+        (vertical-skylines . ,(ly:make-unpure-pure-container ly:slur::vertical-skylines ly:grob::pure-simple-vertical-skylines-from-extents))
+        (Y-extent . ,slur::height)
+        (meta . ((class . Spanner)
+                 (interfaces . (outside-staff-interface
+                                slur-interface))))))
+
+---
+
+# Slurs in LilyPond 3
+
+    !c++
+    // lily/slur-configuration.cc
+    Bezier
+    avoid_staff_line (Slur_score_state const &state,
+                    Bezier bez)
+    {
+    Offset horiz (1, 0);
+    vector<Real> ts = bez.solve_derivative (horiz);
+
+    /* TODO: handle case of broken slur.  */
+    if (!ts.empty ()
+        && (state.extremes_[LEFT].staff_ == state.extremes_[RIGHT].staff_)
+        && state.extremes_[LEFT].staff_ && state.extremes_[RIGHT].staff_)
+        {
+        Real t = ts[0]; //the first (usually only) point where slur is horizontal
+        Real y = bez.curve_point (t)[Y_AXIS];
+        // A Bezier curve at t moves 3t-3t² as far as the middle control points
+        Real factor = 3.0 * t * (1.0 - t);
+
+        Grob *staff = state.extremes_[LEFT].staff_;
+
+        Real p = 2 * (y - staff->relative_coordinate (state.common_[Y_AXIS], Y_AXIS))
+                / state.staff_space_;
+
+        int round_p = (int) my_round (p);
+        if (!Staff_symbol_referencer::on_staff_line (staff, round_p))
+            round_p += (p > round_p) ? 1 : -1;
+        if (!Staff_symbol_referencer::on_staff_line (staff, round_p))
+            return bez;
+
+        Real const distance = (p - round_p) * state.staff_space_ / 2.0;
+        // Allow half the thickness of the slur at the point t, plus one basic
+        // blot-diameter (half for the slur outline, half for the staff line)
+        Real const min_distance = 0.5 * state.thickness_ * factor
+            + state.line_thickness_
+            + ((state.dir_ * distance > 0.0)
+            ? state.parameters_.gap_to_staffline_inside_
+            : state.parameters_.gap_to_staffline_outside_);
+        if (fabs (distance) < min_distance)
+            {
+            Direction resolution_dir = (distance > 0.0) ? UP : DOWN;
+
+            Real dy = resolution_dir * (min_distance - fabs (distance));
+
+            // Shape the curve, moving the horizontal point by factor * dy
+            bez.control_[1][Y_AXIS] += dy;
+            bez.control_[2][Y_AXIS] += dy;
+            // Move the entire curve by the remaining amount
+            bez.translate (Offset (0.0, dy - factor * dy));
+            }
+        }
+    return bez;
+    }
 ---
 
 # How to make a slur dataset
