@@ -91,12 +91,13 @@
 
 ---
 
-# Case study - slurs
+# Case study - slurs in LilyPond
 
-- Slurs are notoriously difficult.
 - LilyPond has over 20 exposed and 100 internal variables it uses for slur layout, many of which are interdependent in ways we don't understand.
-- While LilyPond usually produces a sensible outcome, no one really gets why or how it does this. In other words, its functioning is basically as opaque as machine learning.
+- While LilyPond usually produces a sensible outcome, no one really gets why or how it does this. In other words, it is tantamount to a black box and more or less as opaque as machine learning.
 - Slurs, in classical engraving, provide us tons of data. Using OKR, we can amass a corpus of millions of slurs' placement (_target_) and the objects influencing their placement (_input data_).
+- Six different substantive authors spanning fifteen years.
+- Poorly documented both for users and coders.
 
 ---
 
@@ -215,12 +216,6 @@
         }
     return bez;
     }
----
-
-# Slurs in Lilypond 4
-
-- Six different substantive authors spanning fifteen years.
-- Poorly documented both for users and coders.
 
 ---
 
