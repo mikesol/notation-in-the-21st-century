@@ -1,4 +1,4 @@
-# Machine learning for the layout process
+# Machine learning and musical layout
 
 ---
 
@@ -60,12 +60,16 @@
 - When the process yields sensible results with few outliers.
 - When there is a ton of data.
 
-# Does machine learning make sense in musical layout?
+---
+
+# Does ML make sense in musical layout?
 
 - _Yes_.
 - There is no single, unified model underlying musical layout.
 - Classical engraving is hard to get right, but it is rarely shocking or unpredictable.
 - There is lots of data - we know the context of elements in traditional engraving _and_ where they are placed.
+
+---
 
 # Case study - slurs
 
