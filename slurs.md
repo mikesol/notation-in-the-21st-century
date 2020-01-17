@@ -231,12 +231,13 @@
 # How to make a slur dataset (my way)
 
 - Output LilyPond slur placement coordinates to a logfile for several hundred public scores and snippets.
-- Use bounding-box variables for the following grobs:
+- Use bounding-box variables for the following grobs as **input data**:
     - Encompassed noteheads
     - Encompassed stems
     - Accidentals
     - All per-note grobs with `avoid-slur` set to inside
     - All spanners with `avoid-slur` set to inside
+- Use the four anchor points for a Bezier curve as **targets**.
 
 ---
 
@@ -258,6 +259,12 @@
 ---
 
 # Results
+
+Results given in average cumulative error in staff-spaces. The cumulative error is taken by adding the distances of anchor points for the bezier curve.
+
+Random forest | Gradient boosting  | Dense | LSTM
+------------- | ------------------ | ----- | ----
+0.021         | 0.005              | 0.03  | 0.07
 
 ---
 
