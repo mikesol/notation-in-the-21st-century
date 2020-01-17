@@ -217,6 +217,13 @@
     }
 ---
 
+# Slurs in Lilypond 4
+
+- Six different substantive authors spanning fifteen years.
+- Poorly documented both for users and coders.
+
+---
+
 # How to make a slur dataset
 
 ---
