@@ -14,9 +14,9 @@
 
 # What is machine learning
 
-- Randomly generate equations with tens of thousands of variables.
-- Find a local minimum of a loss function using input data _and_ targets.
-- Use the local minimum to make predictions about partially-known data.
+- Randomly generate mostly-linear equations with tens of thousands of variables.
+- Construct a loss function using these equations and find its (hopefully global) minimum, using input data _and_ targets.
+- Use the minimum to make predictions about new input data where we do not know the target yet.
 
 ---
 
