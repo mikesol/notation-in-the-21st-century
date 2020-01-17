@@ -9,4 +9,4 @@ $ pip install -r requirements.txt
 $ landslide slurs.md
 ```
 
-This will output a file called `presentation.html` that is the presentation. Enjoy!
+This will output a file called `presentation.html` that is the presentation. You can also access this on [netlify](https://ml-music-notation.netlify.com). Enjoy!
