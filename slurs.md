@@ -219,17 +219,63 @@
 
 ---
 
-# How to make a slur dataset
+# How to make a slur dataset (the right way)
+
+![Clara Schumann - Op. 6, Soirées Musicales](./schumann_op6.png)
+
+- Use OCR to identify the score elements, including slurs.
+- Encode metadata if known including composer, instrument(s), engraver, date of composition, date of engraving, etc.
 
 ---
 
-# Possible algorithms
+# How to make a slur dataset (my way)
+
+- Output LilyPond slur placement coordinates to a logfile for several hundred public scores and snippets.
+- Use bounding-box variables for the following grobs:
+    - Encompassed noteheads
+    - Encompassed stems
+    - Accidentals
+    - All per-note grobs with `avoid-slur` set to inside
+    - All spanners with `avoid-slur` set to inside
 
 ---
+
+# Tested algorithms
+
+- Random forest
+- Gradient tree boosting
+- "Naive" dense neural net
+- LSTM-based approach
+
+---
+
+# And the winner is...
+
+---
+
+# ... gradient tree boosting! 🎉🎊
+
+---
+
+# Results
+
+---
+
+# Why is gradient tree boosting effective?
+
+- I have no idea.
+- Probably because neural nets are overkill for this sort of problem.
+- Also probably because neural nets are best suited to sequential or visual data, whereas gradient boosting and random forest are suited more to decisions based on information.
+- But again, I have no idea.
 
 # Gotchyas
 
-- Circular dependencies
+- Circular dependencies.
+- Computation time.
+- Size of binary.
+- Small number of people that work on this sort of thing.
+- Low community enthusiasm.
+- Buzzword-phobia.
 
 ---
 
