@@ -285,6 +285,8 @@ Random forest | Gradient boosting  | Dense | LSTM
 - Also probably because neural nets are best suited to sequential or visual data, whereas gradient boosting and random forest are suited more to decisions based on information.
 - But again, I have no idea.
 
+---
+
 # Gotchyas
 
 - Circular dependencies.
