@@ -241,6 +241,16 @@
 
 ---
 
+# Exmaple datum
+
+N1X0 | N1Y0 | N1X1 | N1Y1 | S1X0 | S1Y0 | S1X1 | S1Y1 | A1X0 | A1Y0 | A1X1 | A1Y1 |
+---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+0.0  | 1.0  | 1.1  | 2.0  | 0.9  | 1.0  | 1.0  | 4.5  | 0.0  | 0.0  | 0.0  | 0.0  |
+
+The issue with this approach is that it either requires different models for different numbers of grobs or grotesquely padded data. There are probably more nuanced ways to do this, but for the GPU I have and the size of the dataset the 0s were not problems.
+
+---
+
 # Tested algorithms
 
 - Random forest
