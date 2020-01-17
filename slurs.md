@@ -69,7 +69,7 @@
 # Why is this called _learning_?
 
 - This is kind of how we learn.
-- Some networks of equations are inspired by neural networks in the brain.
+- Some systems of equations are inspired by, but only loosely modeled on, neural networks in the brain.
 - It sounds impressive.
 
 ---
