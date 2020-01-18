@@ -276,6 +276,11 @@ Random forest | Gradient boosting  | Dense | LSTM
 ------------- | ------------------ | ----- | ----
 0.021         | 0.005              | 0.03  | 0.07
 
+![Example0](./examle0_normal.png)
+![Example1](./examle0_ml.png)
+![Example2](./examle1_normal.png)
+![Example3](./examle1_ml.png)
+
 ---
 
 # Why is gradient tree boosting effective?
