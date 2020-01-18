@@ -274,7 +274,9 @@ Results given in average cumulative error in staff-spaces. The cumulative error 
 
 Random forest | Gradient boosting  | Dense | LSTM
 ------------- | ------------------ | ----- | ----
-0.021         | 0.005              | 0.03  | 0.07
+0.019         | 0.005              | 0.031  | 0.079
+
+Can you spot the difference?
 
 ![Example0](./example0_normal.png)
 ![Example1](./example0_ml.png)
