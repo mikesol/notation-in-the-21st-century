@@ -6,7 +6,7 @@ To compile this presentation, make sure you have a sane distribution of python 3
 $ virtualenv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
-$ landslide slurs.md
+$ landslide -x tables slurs.md
 ```
 
 This will output a file called `presentation.html` that is the presentation. You can also access this on [netlify](https://ml-music-notation.netlify.com). Enjoy!

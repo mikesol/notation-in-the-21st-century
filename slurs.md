@@ -276,10 +276,10 @@ Random forest | Gradient boosting  | Dense | LSTM
 ------------- | ------------------ | ----- | ----
 0.021         | 0.005              | 0.03  | 0.07
 
-![Example0](./examle0_normal.png)
-![Example1](./examle0_ml.png)
-![Example2](./examle1_normal.png)
-![Example3](./examle1_ml.png)
+![Example0](./example0_normal.png)
+![Example1](./example0_ml.png)
+![Example2](./example1_normal.png)
+![Example3](./example1_ml.png)
 
 ---
 
