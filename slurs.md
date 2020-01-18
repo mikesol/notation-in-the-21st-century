@@ -291,6 +291,16 @@ The issue with this approach is that it either requires different models for dif
 
 ---
 
+# LSTM
+
+- Small dense neural network with gate functions that work on sequences.
+- Previous result of LSTM fed to next one, and a "forget" gate averages over a sequence.
+- You'd think this would work well on notation, as it is a sequence (spoiler, it doesn't).
+
+![LSTM](./lstm.jpg)
+
+---
+
 # And the winner is...
 
 ---
