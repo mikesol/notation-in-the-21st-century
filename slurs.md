@@ -266,14 +266,28 @@ The issue with this approach is that it either requires different models for dif
 
 # ... gradient tree boosting! 🎉🎊
 
+    !python
+    import numpy as np
+    from sklearn.metrics import mean_squared_error
+    from sklearn.datasets import make_friedman1
+    from sklearn.ensemble import GradientBoostingRegressor
+
+    input_data_train = np.load('input_data.train.npy')
+    target_train = np.load('target.train.npy')
+    input_data_test = np.load('input_data.train.npy')
+    target_test = np.load('target.train.npy')
+    est = GradientBoostingRegressor(n_estimators=100, learning_rate=0.05,
+    max_depth=5, random_state=0, loss='ls').fit(input_data_train, target_train)
+    print(mean_squared_error(input_data_test, est.predict(target_test)))
+
 ---
 
 # Results
 
 Results given in average cumulative error in staff-spaces. The cumulative error is taken by adding the distances of anchor points for the bezier curve.
 
-Random forest | Gradient boosting  | Dense | LSTM
-------------- | ------------------ | ----- | ----
+Random forest | Gradient boosting  | Dense  | LSTM
+------------- | ------------------ | ------ | -----
 0.019         | 0.005              | 0.031  | 0.079
 
 Can you spot the difference?
