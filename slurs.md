@@ -280,6 +280,14 @@ The issue with this approach is that it either requires different models for dif
 
 ![Decision tree](./decision-tree2.png)
 
+---
+
+# Dense neural network
+
+- Feeds results of one linear equation to another. Each set of linear equations is called a "layer."
+- Layers are gated by an activation function, which randomly "turns off" various paths to allow features to emerge.
+
+![NN](./dense-nn.png)
 
 ---
 
