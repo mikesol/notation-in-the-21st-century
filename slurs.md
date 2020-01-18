@@ -301,5 +301,5 @@ Random forest | Gradient boosting  | Dense | LSTM
 # Further research
 
 - I unfortunately don't have enough bandwidth in the near future to work on this.
-- It seems that Dorico is thinking along these lines, although I haven't seen their code.
 - Would be nice to see more research in this area, happy to advise a GSoC project if anyone is interested.
+- [mike@meeshkan.com](mailto:mike@meeshkan.com) | +358 40 147 1776
