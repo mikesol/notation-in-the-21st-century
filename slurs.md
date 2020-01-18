@@ -260,6 +260,29 @@ The issue with this approach is that it either requires different models for dif
 
 ---
 
+# Random forest
+
+- Ensemble, or "bag", methods.
+- Combination of two methods:
+    - a decision tree;
+    - random pruning of the tree.
+- A decision tree is a random arboreal structure where nodes (random numbers) act as gates that, when multiplied by input data, decide which direction to traverse.
+- Createsreates tens thousands of decision trees and selects the ones that, when combined, represent "features" of an algorithm.
+- Random pruning increases the algorithm's resiliency.
+
+---
+
+# Gradient tree boosting
+
+- Treats each decision tree as part of a loss function to optimize.
+- This function is fully differentiable and thus has a connected gradient.
+- Finds a local minimum of this gradient.
+
+![Decision tree](./decision-tree2.png)
+
+
+---
+
 # And the winner is...
 
 ---
