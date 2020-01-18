@@ -281,9 +281,9 @@ Random forest | Gradient boosting  | Dense | LSTM
 # Why is gradient tree boosting effective?
 
 - I have no idea.
-- Probably because neural nets are overkill for this sort of problem.
-- Also probably because neural nets are best suited to sequential or visual data, whereas gradient boosting and random forest are suited more to decisions based on information.
-- But again, I have no idea.
+- In general, dense neural nets perform poorly because individual weights do not do enough work or are redundant, so they do not generalize or scale well.
+- LSTMs would have been promising for _only_ sequences, but music has spanners, so more research would need to be done into a hybrid sequence/spanner model. My hunch is that they would have won had spanners been able to be properly encoded.
+- Gradient boosting and random forest are generally suited more to phenomena where decisions are based on combining disparate strands of information.
 
 ---
 
