@@ -277,7 +277,7 @@ The issue with this approach is that it either requires different models for dif
     input_data_test = np.load('input_data.train.npy')
     target_test = np.load('target.train.npy')
     est = GradientBoostingRegressor(n_estimators=100, learning_rate=0.05,
-    max_depth=5, random_state=0, loss='ls').fit(input_data_train, target_train)
+        max_depth=5, random_state=0, loss='ls').fit(input_data_train, target_train)
     print(mean_squared_error(input_data_test, est.predict(target_test)))
 
 ---
